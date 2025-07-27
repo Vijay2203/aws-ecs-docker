@@ -28,6 +28,7 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo write definitions file...
+      - DOCKER_CONTAINER_NAME=node-js11
       - printf '[{"name":"exp-code-pipeline","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
